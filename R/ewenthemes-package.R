@@ -11,31 +11,31 @@
 #' Narrow (the one on most systems, anyway) does not have said diversity but this
 #' quality is not (IMO) a "must have".
 #'
-#' There is an option `hrbrthemes.loadfonts` which -- if set to `TRUE` -- will
+#' There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
 #' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
 #' devices. If you are running under Windows, the package calls the same function
 #' to register non-core fonts with the Windows graphics device.
 #'
 #' @md
-#' @name hrbrthemes
+#' @name ewenthemes
 #' @docType package
-#' @author Bob Rudis (bob@@rud.is)
+#' @author Ewen Henderson (ewenhenderson@@gmail.com)
 #' @import ggplot2 grid scales extrafont grDevices
 #' @importFrom magrittr %>%
 #' @import rmarkdown knitr htmltools
 #' @importFrom tools file_path_sans_ext
 NULL
 
-#' hrbrthemes exported operators
+#' ewenthemes exported operators
 #'
 #' The following functions are imported and then re-exported
-#' from the hrbrthemes package to enable use of the magrittr
+#' from the ewenthemes package to enable use of the magrittr
 #' pipe operator with no additional library calls
 #'
-#' @name hrbrthemes-exports
+#' @name ewenthemes-exports
 NULL
 
 #' @name %>%
 #' @export
-#' @rdname hrbrthemes-exports
+#' @rdname ewenthemes-exports
 NULL

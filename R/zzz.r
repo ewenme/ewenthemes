@@ -1,8 +1,8 @@
 .onAttach <- function(libname, pkgname) {
 
   # if (interactive()) {
-  #   packageStartupMessage(paste0("hrbrthemes is under *active* development. ",
-  #                                "See https://github.com/hrbrmstr/hrbrthemes for info/news."))
+  #   packageStartupMessage(paste0("ewenthemes is under *active* development. ",
+  #                                "See https://github.com/ewenme/ewenthemes for info/news."))
   # }
 
   # Suggestion by @alexwhan
@@ -21,7 +21,7 @@
   fnt <- extrafont::fonttable()
   if (!any(grepl("Arial[ ]Narrow|Roboto[ ]Condensed", fnt$FamilyName))) {
     packageStartupMessage("NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.")
-    packageStartupMessage("      Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and")
+    packageStartupMessage("      Please use ewenthemes::import_roboto_condensed() to install Roboto Condensed and")
     packageStartupMessage("      if Arial Narrow is not on your system, please see http://bit.ly/arialnarrow")
   } # nocov end
 
