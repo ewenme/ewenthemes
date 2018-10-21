@@ -1,13 +1,12 @@
 Package: ewenthemes
 Type: Package
-Title: Additional Themes, Theme Components and Utilities for 'ggplot2'
+Title: Beautiful Themes and Theme Components for 'ggplot2'
 Version: 1.0.0
 Authors@R: c(
       person("Ewen", "Henderson", email = "ewenhenderson@gmail.com", role = c("aut", "cre"))
     )
 Maintainer: Ewen Henderson <ewenhenderson@gmail.com>
-Description: A compilation of extra 'ggplot2' themes, scales and utilities, including a 
-    spell check function for plot label fields and an overall emphasis on typography. 
+Description: A compilation of extra 'ggplot2' themes with an overall emphasis on typography. 
 URL: http://github.com/ewenme/ewenthemes
 BugReports: https://github.com/ewenme/ewenthemes/issues
 Copyright: file inst/COPYRIGHTS
@@ -36,5 +35,5 @@ Imports:
     htmltools,
     tools,
     magrittr
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.0
 VignetteBuilder: knitr

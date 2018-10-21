@@ -1,87 +1,60 @@
 
-## `hrbrthemes` : Additional Themes and Theme Components for ‘ggplot2’
+## ewenthemes: Beautiful Themes and Theme Components for ‘ggplot2’
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
 developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
-[![codecov](https://codecov.io/gh/hrbrmstr/hrbrthemes/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/hrbrthemes)
 [![Travis-CI Build
-Status](https://travis-ci.org/hrbrmstr/hrbrthemes.svg?branch=master)](https://travis-ci.org/hrbrmstr/hrbrthemes)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/hrbrthemes)](https://cran.r-project.org/package=hrbrthemes)
-![downloads](http://cranlogs.r-pkg.org/badges/grand-total/hrbrthemes)
-<!-- [![keybase verified](https://img.shields.io/badge/keybase-verified-brightgreen.svg)](https://gist.github.com/hrbrmstr/be2f2c14fd78cac24697) -->
+Status](https://travis-ci.org/ewenme/ewenthemes.svg?branch=master)](https://travis-ci.org/ewenme/ewenthemes)
 
 -----
 
 This is a very focused package that provides typography-centric themes
-and theme components for ggplot2. It’s a an extract/riff of
-[`hrbrmisc`](http://github.com/hrbrmstr/hrbrmisc) created by request.
-
-The core theme: `theme_ipsum` (“ipsum” is Latin for “precise”) uses
+and theme components for ggplot2. The core theme: `theme_ewen` uses
 Arial Narrow which should be installed on practically any modern system,
-so it’s “free”-ish. This font is condensed, has solid default kerning
-pairs and geometric numbers. That’s what I consider the “font trifecta”
-must-have for charts. An additional quality for fonts for charts is that
-they have a diversity of weights. Arial Narrow (the one on most systems,
-anyway) does not have said diversity but this quality is not (IMO) a
-“must have”.
+so it’s “free”-ish.
 
 The following functions are implemented/objects are exported:
 
 Core themes & scales:
 
-  - `theme_ipsum`: Arial Narrow-based theme
-  - `theme_ipsum_ps`: IBM Plex Sans-based theme
-  - `theme_ipsum_rc`: Roboto Condensed-based theme
-  - `theme_ipsum_tw`: Titillium Web-based theme
-  - `scale_x_comma` / `scale_y_comma`: Comma format for axis text and
-    better `expand` defaults (you need to set limits)
-  - `scale_x_percent` / `scale_y_percent`: Percent format for axis text
-    and `expand=c(0,0)` (you need to set limits)
+  - `theme_ewen`: Arial Narrow-based theme
+  - `theme_ewen_ws`: Work Sans-based theme
+  - `theme_ipsum_sp`: Spectral-based theme
   - `scale_color_ipsum` / `scale_fill_ipsum` / `ipsum_pal`: A muted
     discrete color palette with 9 colors
 
 Utilities:
 
-  - `flush_ticks`: Makes axis text labels flush on the ends
-  - `gg_check`: Spell check ggplot2 plot labels
   - `update_geom_font_defaults`: Update font defaults for text geoms
     (the default is — unsurprisingly — Arial Narrow)
-
-R Markdown:
-
-  - `ipsum`: minimalistic HTML template
-  - `ipsum_pdf`: everything you need to use hrbrthemes in PDFs
 
 The following global variables are now in your namespace:
 
   - `font_an`: a short global alias for “`Arial Narrow`”
-  - `font_ps`: a short global alias for “`IBMPlexSans`”
-  - `font_ps_light`: a short global alias for “`IBMPlexSans-Light`”
-  - `font_rc`: a short global alias for “`Roboto Condensed`”
-  - `font_rc_light`: a short global alias for “`Roboto Condensed Light`”
-  - `font_tw`: a short global alias for “`Titillium Web`”
-  - `font_tw_bold`: a short global alias for “`Titillium Web Bold`”
-    (NOTE: may be an issue with name on macOS 10.13)
-  - `font_tw_light`: a short global alias for “`Titillium Web Light`”
-    (NOTE: may be an issue with name on macOS 10.13)
+  - `font_ws`: a short global alias for “`Work Sans`”
+  - `font_ws_light`: a short global alias for “`Work Sans Light`”
+  - `font_ws_bold`: a short global alias for “`Work Sans Bold`”
+  - `font_sp`: a short global alias for “`Spectral`”
+  - `font_sp_light`: a short global alias for “`Spectral Light`”
+  - `font_sp_bold`: a short global alias for “`Spectral Bold`”
 
 ### Installation
 
 ``` r
-devtools::install_github("hrbrmstr/hrbrthemes")
+devtools::install_github("ewenme/ewenthemes")
 ```
 
 ### Usage
 
 ``` r
-library(hrbrthemes)
+library(ewenthemes)
 library(gcookbook)
 library(tidyverse)
 
 # current verison
-packageVersion("hrbrthemes")
-## [1] '0.5.0'
+packageVersion("ewenthemes")
+## [1] '1.0.0'
 ```
 
 ### Base theme (Arial Narrow)
@@ -93,12 +66,12 @@ ggplot(mtcars, aes(mpg, wt)) +
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") + 
-  theme_ipsum()
+  theme_ewen()
 ```
 
 <img src="README_figs/README-unnamed-chunk-5-1.png" width="672" />
 
-### Roboto Condensed
+### Work Sans
 
 ``` r
 ggplot(mtcars, aes(mpg, wt)) +
@@ -107,12 +80,12 @@ ggplot(mtcars, aes(mpg, wt)) +
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") + 
-  theme_ipsum_rc()
+  theme_ewen_ws()
 ```
 
 <img src="README_figs/README-unnamed-chunk-6-1.png" width="672" />
 
-### IBM Plex Sans
+### Spectral
 
 ``` r
 ggplot(mpg, aes(displ, hwy)) +
@@ -123,173 +96,12 @@ ggplot(mpg, aes(displ, hwy)) +
   scale_fill_ipsum() +
   facet_wrap(~class, scales="free") +
   labs(
-    title="IBM Plex Sans Test",
-    subtitle="This is a subtitle to see the how it looks in IBM Plex Sans",
-    caption="Source: hrbrthemes & IBM"
+    title="Spectral Test",
+    subtitle="This is a subtitle to see the how it looks in Spectral",
+    caption="Source: ewenthemes"
   ) +
-  theme_ipsum_ps(grid="XY", axis="xy") +
+  theme_ewen_sp(grid="XY", axis="xy") +
   theme(legend.position="none") -> gg
-
-flush_ticks(gg)
-## theme(axis.text.x=element_text(hjust=c(0, rep(0.5, 6), 1))) +
-## theme(axis.text.y=element_text(vjust=c(0, rep(0.5, 3), 1)))
-```
-
-<img src="README_figs/README-unnamed-chunk-7-1.png" width="960" />
-
-### Titillium Web
-
-``` r
-ggplot(mpg, aes(displ, hwy)) +
-  geom_jitter(aes(color=class, fill=class), size=3, shape=21, alpha=1/2) +
-  scale_x_continuous(expand=c(0,0), limits=c(1, 8), breaks=1:8) +
-  scale_y_continuous(expand=c(0,0), limits=c(10, 50)) +
-  scale_color_ipsum() +
-  scale_fill_ipsum() +
-  facet_wrap(~class, scales="free") +
-  labs(
-    title="Titillium Web",
-    subtitle="This is a subtitle to see the how it looks in Titillium Web",
-    caption="Source: hrbrthemes & Google"
-  ) +
-  theme_ipsum_tw(grid="XY", axis="xy") +
-  theme(legend.position="none") -> gg
-
-flush_ticks(gg)
-## theme(axis.text.x=element_text(hjust=c(0, rep(0.5, 6), 1))) +
-## theme(axis.text.y=element_text(vjust=c(0, rep(0.5, 3), 1)))
-```
-
-<img src="README_figs/README-unnamed-chunk-8-1.png" width="960" />
-
-### Scales (Color/Fill)
-
-``` r
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point(aes(color=factor(carb))) +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 scatterplot example",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") + 
-  scale_color_ipsum() +
-  theme_ipsum_rc()
-```
-
-<img src="README_figs/README-unnamed-chunk-9-1.png" width="672" />
-
-### Scales (Axis)
-
-``` r
-count(mpg, class) %>% 
-  mutate(pct=n/sum(n)) %>% 
-  ggplot(aes(class, pct)) +
-  geom_col() +
-  scale_y_percent() +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 column chart example with percents",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") + 
-  theme_ipsum(grid="Y")
-```
-
-<img src="README_figs/README-unnamed-chunk-10-1.png" width="672" />
-
-``` r
-ggplot(uspopage, aes(x=Year, y=Thousands, fill=AgeGroup)) + 
-  geom_area() +
-  scale_fill_ipsum() +
-  scale_x_continuous(expand=c(0,0)) +
-  scale_y_comma() +
-  labs(title="Age distribution of population in the U.S., 1900-2002",
-       subtitle="Example data from the R Graphics Cookbook",
-       caption="Source: R Graphics Cookbook") +
-  theme_ipsum_rc(grid="XY") +
-  theme(axis.text.x=element_text(hjust=c(0, 0.5, 0.5, 0.5, 1))) +
-  theme(legend.position="bottom")
-```
-
-<img src="README_figs/README-unnamed-chunk-11-1.png" width="672" />
-
-``` r
-update_geom_font_defaults(font_rc_light)
-
-count(mpg, class) %>% 
-  mutate(n=n*2000) %>% 
-  arrange(n) %>% 
-  mutate(class=factor(class, levels=class)) %>% 
-  ggplot(aes(class, n)) +
-  geom_col() +
-  geom_text(aes(label=scales::comma(n)), hjust=0, nudge_y=2000) +
-  scale_y_comma(limits=c(0,150000)) +
-  coord_flip() +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 column chart example with commas",
-       subtitle="A plot that is only useful for demonstration purposes, esp since you'd never\nreally want direct labels and axis labels",
-       caption="Brought to you by the letter 'g'") + 
-  theme_ipsum_rc(grid="X")
-```
-
-<img src="README_figs/README-unnamed-chunk-12-1.png" width="672" />
-
-### Spellcheck ggplot2 labels
-
-``` r
-df <- data.frame(x=c(20, 25, 30), y=c(4, 4, 4), txt=c("One", "Two", "Three"))
-
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point() +
-  labs(x="This is some txt", y="This is more text",
-       title="Thisy is a titlle",
-       subtitle="This is a subtitley",
-       caption="This is a captien") +
-  theme_ipsum_rc(grid="XY") -> gg
-
-gg_check(gg)
-## Possible misspelled words in [title]: (Thisy, titlle)
-## Possible misspelled words in [subtitle]: (subtitley)
-## Possible misspelled words in [caption]: (captien)
-```
-
-<img src="README_figs/README-unnamed-chunk-13-1.png" width="672" />
-
-### Test Results
-
-``` r
-library(hrbrthemes)
-
-date()
-## [1] "Tue Apr 24 10:13:37 2018"
-
-devtools::test()
-## ✔ | OK F W S | Context
-## 
-⠏ |  0       | core theme components work
-⠋ |  1       | core theme components work
-⠙ |  2       | core theme components work
-⠹ |  3       | core theme components work
-⠸ |  4       | core theme components work
-⠼ |  5       | core theme components work
-⠴ |  6       | core theme components work
-⠦ |  7       | core theme components work
-⠧ |  8       | core theme components work
-⠇ |  9       | core theme components work
-⠏ | 10       | core theme components work
-✔ | 10       | core theme components work [2.3 s]
-## 
-⠏ |  0       | themes
-## 
-⠋ |  1       | themes
-## 
-⠙ |  2       | themes
-✔ |  2       | themes [0.5 s]
-## 
-## ══ Results ══════════════════════════════════════════════════════════════════════════════════════════════
-## Duration: 2.8 s
-## 
-## OK:       12
-## Failed:   0
-## Warnings: 0
-## Skipped:  0
 ```
 
 ### Code of Conduct
