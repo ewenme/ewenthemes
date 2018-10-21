@@ -1,29 +1,29 @@
-#' A precise & pristine [ggplot2] theme with opinionated defaults and an emphasis on typoghraphy
+#' A precise & pristine [ggplot2] theme with an emphasis on typography,
+#' supporting the \href{https://ewen.io/}{ewen.io} site, based on
+#' `theme_ipsum` from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.
 #'
-#' You should [import_titillium_web]() first and also install the fonts on your
+#' You should [import_spectral]() first and also install the fonts on your
 #' system before trying to use this theme.
 #'
-#' There is an option `hrbrthemes.loadfonts` which -- if set to `TRUE` -- will
+#' There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
 #' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
 #' devices. If you are running under Windows, the package calls the same function
 #' to register non-core fonts with the Windows graphics device.
 #'
 #' @md
 #' @param base_family,base_size base font family and size
-#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot tilte family, face, size and margin
+#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot title family, face, size and margi
 #' @param subtitle_family,subtitle_face,subtitle_size plot subtitle family, face and size
 #' @param subtitle_margin plot subtitle margin bottom (single numeric value)
 #' @param strip_text_family,strip_text_face,strip_text_size facet label font family, face and size
 #' @param caption_family,caption_face,caption_size,caption_margin plot caption family, face, size and margin
 #' @param axis_title_family,axis_title_face,axis_title_size axis title font family, face and size
-#' @param axis_title_just axis title font justificationk one of `[blmcrt]`
-#' @param axis_text_size font size of axis text
-#' @param plot_margin plot margin (specify with [ggplot2::margin])
-#' @param grid_col grid color
+#' @param axis_title_just axis title font justification, one of `[blmcrt]`
+#' @param plot_margin plot margin (specify with [ggplot2::margin()])
+#' @param grid_col,axis_col grid & axis colors; grid defaults to `#cccccc`, axes default to `#2b2b2b`
 #' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
-#' @param axis_col axis color
+#' @param axis_text_size font size of axis text
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
-#' @param ticks ticks if `TRUE` add ticks
 #' @export
 #' @examples \dontrun{
 #' library(ggplot2)
@@ -32,52 +32,48 @@
 #' # seminal scatterplot
 #' ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
-#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_ipsum_rc()
+#'   theme_ewen_sp()
 #'
 #' # seminal bar chart
 #'
-#' # note: make this font_rc on Windows
-#' update_geom_font_defaults(family=font_rc_light)
+#' update_geom_font_defaults()
 #'
 #' count(mpg, class) %>%
 #'   ggplot(aes(class, n)) +
 #'   geom_col() +
 #'   geom_text(aes(label=n), nudge_y=3) +
-#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
 #'        title="Seminal ggplot2 bar chart example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_ipsum_tw(grid="Y") +
-#'   theme(axis.text.y=element_blank())
+#'   theme_ewen_sp() +
+#'   theme(axis.text.y=element_blank()) +
+#'   scale_y_continuous(expand=c(0, 0))
 #' }
-theme_ipsum_tw <- function(
-  base_family="Titillium Web", base_size = 10.5,
-  plot_title_family=if (.Platform$OS.type == "windows") "Titillium Web" else "Titillium Web Bold",
-  plot_title_size = 18,
-  plot_title_face="bold",
-  plot_title_margin = 10,
-  subtitle_family=if (.Platform$OS.type == "windows") "Titillium Web" else "Titillium Web Light",
-  subtitle_size = 13,
-  subtitle_face = "plain",
-  subtitle_margin = 15,
-  strip_text_family = base_family,
-  strip_text_size = 12,
-  strip_text_face = "plain",
-  caption_family=if (.Platform$OS.type == "windows") "Titillium Web" else "Titillium Web Light",
-  caption_size = 9,
-  caption_face = "plain", caption_margin = 10,
-  axis_text_size = base_size,
-  axis_title_family = base_family,
-  axis_title_size = 9,
-  axis_title_face = "plain",
-  axis_title_just = "rt",
-  plot_margin = margin(30, 30, 30, 30),
-  grid_col = "#cccccc", grid = TRUE,
-  axis_col = "#cccccc", axis = FALSE, ticks = FALSE) {
+theme_ewen_sp <- function(base_family="Spectral", base_size = 11.5,
+                       plot_title_family=if (.Platform$OS.type == "windows") "Spectral" else "Spectral Bold",
+                       plot_title_size = 18,
+                       plot_title_face="bold", plot_title_margin = 10,
+                       subtitle_family=if (.Platform$OS.type == "windows") "Spectral" else "Spectral Light",
+                       subtitle_size = 12,
+                       subtitle_face = "plain", subtitle_margin = 15,
+                       strip_text_family = base_family, strip_text_size = 12,
+                       strip_text_face = "plain",
+                       caption_family = if (.Platform$OS.type == "windows") "Spectral" else "Spectral Light",
+                       caption_size = 10,
+                       caption_face = "plain", caption_margin = 15,
+                       axis_text_size = base_size,
+                       axis_title_family = subtitle_family,
+                       axis_title_size = base_size,
+                       axis_title_face = "plain", axis_title_just = "rt",
+                       plot_margin = margin(10, 10, 10, 10),
+                       grid_col = "#cccccc", grid = "Y",
+                       axis_col = "#2b2b2b", axis = "x"
+) {
 
   ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
 
@@ -102,37 +98,30 @@ theme_ipsum_tw <- function(
   }
 
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + theme(axis.line=element_line(color=axis_col, size=0.15))
+    ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.5))
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
       if (regexpr("x", axis)[1] < 0) {
         ret <- ret + theme(axis.line.x=element_blank())
       } else {
-        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
+        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
       }
       if (regexpr("y", axis)[1] < 0) {
         ret <- ret + theme(axis.line.y=element_blank())
       } else {
-        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
       }
     } else {
-      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
-      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
+      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
     }
   } else {
     ret <- ret + theme(axis.line=element_blank())
   }
 
-  if (!ticks) {
-    ret <- ret + theme(axis.ticks = element_blank())
-    ret <- ret + theme(axis.ticks.x = element_blank())
-    ret <- ret + theme(axis.ticks.y = element_blank())
-  } else {
-    ret <- ret + theme(axis.ticks = element_line(size=0.15))
-    ret <- ret + theme(axis.ticks.x = element_line(size=0.15))
-    ret <- ret + theme(axis.ticks.y = element_line(size=0.15))
-    ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
-  }
+  ret <- ret + theme(axis.ticks = element_blank())
+  ret <- ret + theme(axis.ticks.x = element_blank())
+  ret <- ret + theme(axis.ticks.y = element_blank())
 
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
@@ -164,11 +153,10 @@ theme_ipsum_tw <- function(
 
 }
 
-#' Import Titillium Web font for use in charts
+
+#' Import Work Sans font for use in charts
 #'
-#' Titillium Web  is a trademark of Google.
-#'
-#' There is an option `hrbrthemes.loadfonts` which -- if set to `TRUE` -- will
+#' There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
 #' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
 #' devices. If you are running under Windows, the package calls the same function
 #' to register non-core fonts with the Windows graphics device.
@@ -179,41 +167,40 @@ theme_ipsum_tw <- function(
 #'   recommended that you install them on your system the same way you would any
 #'   other font you wish to use in other programs.
 #' @export
-import_titillium_web <- function() {
+import_spectral <- function() {
 
-  tw_font_dir <- system.file("fonts", "titillium-web", package="hrbrthemes")
+  sp_font_dir <- system.file("fonts", "spectral", package="ewenthemes")
 
-  suppressWarnings(suppressMessages(extrafont::font_import(tw_font_dir, prompt=FALSE)))
+  suppressWarnings(suppressMessages(extrafont::font_import(sp_font_dir, prompt=FALSE)))
 
   message(
     sprintf(
       "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
-      tw_font_dir)
+      sp_font_dir)
   )
 
 }
 
-#' @rdname TitilliumWeb
+#' @rdname Spectral
 #' @md
-#' @title Titillium Web font name R variable aliases
-#' @description `font_tw` == "`Titillium Web`"
+#' @title Work Sans font name R variable aliases
+#' @description `font_sp` == "`Spectral`"
 #' @format length 1 character vector
 #' @export
-font_tw <- "Titillium Web"
+font_sp <- "Spectral"
 
-#' @rdname TitilliumWeb
+#' @rdname Spectral
 #' @md
-#' @note `font_tw_light` (a.k.a. "`Titillium Web Bold`") is not available on
+#' @note `font_sp_bold` (a.k.a. "`Spectral Bold`") is not available on
 #'     Windows and will throw a warning if used in plots.
-#' @description `font_tw_light` == "`Titillium Web Bold`"
+#' @description `font_sp_bold` == "`Spectral Bold`"
 #' @export
-font_tw_bold <- "Titillium Web Bold"
+font_sp_bold <- "Spectral Bold"
 
-#' @rdname TitilliumWeb
+#' @rdname Spectral
 #' @md
-#' @note `font_tw_light` (a.k.a. "`Titillium Web Light`") is not available on
+#' @note `font_sp_light` (a.k.a. "`Spectral Light`") is not available on
 #'     Windows and will throw a warning if used in plots.
-#' @description `font_tw_light` == "`Titillium Web Light`"
+#' @description `font_sp_light` == "`SpectralLight`"
 #' @export
-font_tw_light <- "Titillium Web Light"
-
+font_sp_light <- "Spectral Light"

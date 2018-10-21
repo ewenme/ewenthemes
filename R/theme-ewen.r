@@ -41,7 +41,7 @@
 #' # seminal scatterplot
 #' ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
-#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
@@ -59,8 +59,9 @@
 #'        title="Seminal ggplot2 bar chart example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_ewen(grid="Y") +
-#'   theme(axis.text.y=element_blank())
+#'   theme_ewen() +
+#'   theme(axis.text.y=element_blank()) +
+#'   scale_y_continuous(expand=c(0, 0))
 #' }
 theme_ewen <- function(base_family="Arial Narrow", base_size = 11.5,
                        plot_title_family=base_family, plot_title_size = 18,
