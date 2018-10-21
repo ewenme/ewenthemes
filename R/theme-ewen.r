@@ -1,11 +1,6 @@
-#' A precise & pristine [ggplot2] theme, with opinionated defaults and an emphasis on typography,
-#' supporting the \href{https://ewen.io/}{ewen.io} site
-#'
-#' @md
-#' @section Why Arial Narrow?:
-#' First and foremost, Arial Narrow is generally installed by default or readily
-#' available on any modern system, so it's "free"-ish; plus, it is a condensed font
-#' with solid default kerning pairs and geometric numbers.
+#' A precise & pristine [ggplot2] theme with an emphasis on typography,
+#' supporting the \href{https://ewen.io/}{ewen.io} site, based on
+#' `theme_ipsum` from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.
 #'
 #' @section Building upon `theme_ewen`:
 #' The function is setup in such a way that you can customize your own one by just
@@ -34,11 +29,10 @@
 #' @param axis_title_family,axis_title_face,axis_title_size axis title font family, face and size
 #' @param axis_title_just axis title font justification, one of `[blmcrt]`
 #' @param plot_margin plot margin (specify with [ggplot2::margin()])
-#' @param grid_col,axis_col grid & axis colors; both default to `#cccccc`
+#' @param grid_col,axis_col grid & axis colors; grid defaults to `#cccccc`, axes default to `#2b2b2b`
 #' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
 #' @param axis_text_size font size of axis text
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
-#' @param ticks ticks if `TRUE` add ticks
 #' @export
 #' @examples \dontrun{
 #' library(ggplot2)
@@ -75,14 +69,15 @@ theme_ewen <- function(base_family="Arial Narrow", base_size = 11.5,
                        subtitle_face = "plain", subtitle_margin = 15,
                        strip_text_family = base_family, strip_text_size = 12,
                        strip_text_face = "plain",
-                       caption_family = base_family, caption_size = 9,
-                       caption_face = "italic", caption_margin = 10,
+                       caption_family = base_family, caption_size = 10,
+                       caption_face = "plain", caption_margin = 15,
                        axis_text_size = base_size,
-                       axis_title_family = subtitle_family, axis_title_size = 9,
+                       axis_title_family = subtitle_family,
+                       axis_title_size = base_size,
                        axis_title_face = "plain", axis_title_just = "rt",
-                       plot_margin = margin(30, 30, 30, 30),
-                       grid_col = "#cccccc", grid = FALSE,
-                       axis_col = "#cccccc", axis = "x", ticks = FALSE
+                       plot_margin = margin(10, 10, 10, 10),
+                       grid_col = "#cccccc", grid = "Y",
+                       axis_col = "#2b2b2b", axis = "x"
                        ) {
 
   ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
@@ -108,37 +103,30 @@ theme_ewen <- function(base_family="Arial Narrow", base_size = 11.5,
   }
 
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.15))
+    ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.5))
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
       if (regexpr("x", axis)[1] < 0) {
         ret <- ret + theme(axis.line.x=element_blank())
       } else {
-        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
+        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
       }
       if (regexpr("y", axis)[1] < 0) {
         ret <- ret + theme(axis.line.y=element_blank())
       } else {
-        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
       }
     } else {
-      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
-      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
+      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
     }
   } else {
     ret <- ret + theme(axis.line=element_blank())
   }
 
-  if (!ticks) {
     ret <- ret + theme(axis.ticks = element_blank())
     ret <- ret + theme(axis.ticks.x = element_blank())
     ret <- ret + theme(axis.ticks.y = element_blank())
-  } else {
-    ret <- ret + theme(axis.ticks = element_line(size=0.15))
-    ret <- ret + theme(axis.ticks.x = element_line(size=0.15))
-    ret <- ret + theme(axis.ticks.y = element_line(size=0.15))
-    ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
-  }
 
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
