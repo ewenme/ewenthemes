@@ -100,9 +100,10 @@ ggplot(mpg, aes(displ, hwy)) +
     subtitle="This is a subtitle to see the how it looks in Spectral",
     caption="Source: ewenthemes"
   ) +
-  theme_ewen_sp(grid="XY", axis="xy") +
-  theme(legend.position="none") -> gg
+  theme_ewen_sp()
 ```
+
+<img src="README_figs/README-unnamed-chunk-7-1.png" width="960" />
 
 ### Code of Conduct
 
