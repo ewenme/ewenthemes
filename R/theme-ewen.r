@@ -1,6 +1,6 @@
 #' A precise & pristine [ggplot2] theme with an emphasis on typography,
 #' supporting the \href{https://ewen.io/}{ewen.io} site, based on
-#' `theme_ipsum` from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.
+#' `theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
 #'
 #' @section Building upon `theme_ewen`:
 #' The function is setup in such a way that you can customize your own one by just

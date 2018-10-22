@@ -4,7 +4,7 @@
 \alias{theme_ewen}
 \title{A precise & pristine \link{ggplot2} theme with an emphasis on typography,
 supporting the \href{https://ewen.io/}{ewen.io} site, based on
-\code{theme_ipsum} from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.}
+\code{theme_ipsum} from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
 \usage{
 theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
   plot_title_family = base_family, plot_title_size = 18,
@@ -50,7 +50,7 @@ theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
 \description{
 A precise & pristine \link{ggplot2} theme with an emphasis on typography,
 supporting the \href{https://ewen.io/}{ewen.io} site, based on
-\code{theme_ipsum} from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.
+\code{theme_ipsum} from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
 }
 \section{Building upon \code{theme_ewen}}{
 

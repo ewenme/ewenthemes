@@ -20,22 +20,7 @@
 #' @name ewenthemes
 #' @docType package
 #' @author Ewen Henderson (ewenhenderson@@gmail.com)
-#' @import ggplot2 grid scales extrafont grDevices
-#' @importFrom magrittr %>%
-#' @import rmarkdown knitr htmltools
+#' @import ggplot2 grid extrafont grDevices
+#' @import rmarkdown knitr
 #' @importFrom tools file_path_sans_ext
-NULL
-
-#' ewenthemes exported operators
-#'
-#' The following functions are imported and then re-exported
-#' from the ewenthemes package to enable use of the magrittr
-#' pipe operator with no additional library calls
-#'
-#' @name ewenthemes-exports
-NULL
-
-#' @name %>%
-#' @export
-#' @rdname ewenthemes-exports
 NULL

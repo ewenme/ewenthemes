@@ -1,6 +1,6 @@
 #' A precise & pristine [ggplot2] theme with an emphasis on typography,
 #' supporting the \href{https://ewen.io/}{ewen.io} site, based on
-#' `theme_ipsum` from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.
+#' `theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
 #'
 #' You should [import_spectral]() first and also install the fonts on your
 #' system before trying to use this theme.
@@ -47,7 +47,7 @@ theme_ewen_sp <- function(base_family="Spectral", base_size = 11.5,
                        strip_text_family = base_family, strip_text_size = 12,
                        strip_text_face = "plain",
                        caption_family = if (.Platform$OS.type == "windows") "Spectral" else "Spectral Light",
-                       caption_size = 10,
+                       caption_size = 11,
                        caption_face = "plain", caption_margin = 15,
                        axis_text_size = base_size,
                        axis_title_family = subtitle_family,

@@ -16,7 +16,6 @@ Suggests:
     testthat,
     gridExtra,
     hunspell,
-    clipr,
     svglite
 Depends:
     R (>= 3.2.0)
@@ -24,11 +23,9 @@ Imports:
     ggplot2 (>= 2.2.1),
     grDevices,
     grid,
-    scales,
     extrafont,
     knitr,
     rmarkdown,
-    htmltools,
     tools
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr

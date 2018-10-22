@@ -4,7 +4,7 @@
 \alias{theme_ewen_sp}
 \title{A precise & pristine \link{ggplot2} theme with an emphasis on typography,
 supporting the \href{https://ewen.io/}{ewen.io} site, based on
-\code{theme_ipsum} from \code{\href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}}.}
+\code{theme_ipsum} from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
 \usage{
 theme_ewen_sp(base_family = "Spectral", base_size = 11.5,
   plot_title_family = if (.Platform$OS.type == "windows") "Spectral" else
@@ -14,7 +14,7 @@ theme_ewen_sp(base_family = "Spectral", base_size = 11.5,
   subtitle_face = "plain", subtitle_margin = 15,
   strip_text_family = base_family, strip_text_size = 12,
   strip_text_face = "plain", caption_family = if (.Platform$OS.type ==
-  "windows") "Spectral" else "Spectral Light", caption_size = 10,
+  "windows") "Spectral" else "Spectral Light", caption_size = 11,
   caption_face = "plain", caption_margin = 15,
   axis_text_size = base_size, axis_title_family = subtitle_family,
   axis_title_size = base_size, axis_title_face = "plain",
