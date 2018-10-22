@@ -9,17 +9,15 @@ Status](https://travis-ci.org/ewenme/ewenthemes.svg?branch=master)](https://trav
 
 -----
 
-Typography-centric themes and theme components for ggplot2, standing on
+Typography-centric themes and theme components for ggplot2. Standing on
 the shoulders of [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes).
 
 The core theme, `theme_ewen`, uses Arial Narrow which should be
-installed on practically any modern system. The theme variations use
+installed on practically any modern system. Variations on this theme use
 widely available typefaces - [Work
 Sans](https://github.com/weiweihuanghuang/Work-Sans) by Wei Huang, and
 [Spectral](https://fonts.google.com/specimen/Spectral) by Production
 Type.
-
-The following functions are implemented/objects are exported:
 
 Core themes:
 
@@ -27,7 +25,7 @@ Core themes:
   - `theme_ewen_ws`: Work Sans-based theme
   - `theme_ewen_sp`: Spectral-based theme
 
-The following global variables are now in your namespace:
+These global variables are also made available:
 
   - `font_an`: a short global alias for “`Arial Narrow`”
   - `font_ws`: a short global alias for “`Work Sans`”
@@ -50,7 +48,6 @@ devtools::install_github("ewenme/ewenthemes")
 ``` r
 library(ewenthemes)
 library(ggplot2)
-library(ghibli)
 
 # current verison
 packageVersion("ewenthemes")
@@ -66,20 +63,22 @@ ggplot(mtcars, aes(mpg, wt)) +
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") + 
+  # apply theme
   theme_ewen()
 ```
 
 <img src="README_figs/README-unnamed-chunk-5-1.png" width="672" />
 
-### Work Sans
+### Work Sans theme
 
 ``` r
 ggplot(mtcars, aes(mpg, wt)) +
-  geom_point(colour = ghibli_palette(name = "SpiritedMedium")[4]) +
+  geom_point() +
   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") + 
+  # apply theme
   theme_ewen_ws()
 ```
 
