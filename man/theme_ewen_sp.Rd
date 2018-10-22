@@ -62,7 +62,6 @@ to register non-core fonts with the Windows graphics device.
 \examples{
 \dontrun{
 library(ggplot2)
-library(dplyr)
 
 # seminal scatterplot
 ggplot(mtcars, aes(mpg, wt)) +
@@ -72,21 +71,5 @@ ggplot(mtcars, aes(mpg, wt)) +
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") +
   theme_ewen_sp()
-
-# seminal bar chart
-
-update_geom_font_defaults()
-
-count(mpg, class) \%>\%
-  ggplot(aes(class, n)) +
-  geom_col() +
-  geom_text(aes(label=n), nudge_y=3) +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 bar chart example",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") +
-  theme_ewen_sp() +
-  theme(axis.text.y=element_blank()) +
-  scale_y_continuous(expand=c(0, 0))
 }
 }

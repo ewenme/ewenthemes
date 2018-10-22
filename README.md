@@ -49,8 +49,7 @@ devtools::install_github("ewenme/ewenthemes")
 
 ``` r
 library(ewenthemes)
-library(gcookbook)
-library(tidyverse)
+library(ggplot2)
 
 # current verison
 packageVersion("ewenthemes")
@@ -97,7 +96,7 @@ ggplot(mpg, aes(displ, hwy)) +
   facet_wrap(~class, scales="free") +
   labs(
     title="Spectral Test",
-    subtitle="This is a subtitle to see the how it looks in Spectral",
+    subtitle="This is a subtitle to see how it looks in Spectral",
     caption="Source: ewenthemes"
   ) +
   theme_ewen_sp()

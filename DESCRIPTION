@@ -14,13 +14,9 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Suggests:
     testthat,
-    dplyr,
     gridExtra,
     hunspell,
-    stringi,
-    gcookbook,
     clipr,
-    vdiffr,
     svglite
 Depends:
     R (>= 3.2.0)
@@ -33,7 +29,6 @@ Imports:
     knitr,
     rmarkdown,
     htmltools,
-    tools,
-    magrittr
+    tools
 RoxygenNote: 6.1.0
 VignetteBuilder: knitr

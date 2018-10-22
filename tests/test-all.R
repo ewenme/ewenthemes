@@ -1,2 +1,2 @@
 library(testthat)
-test_check("hrbrthemes")
+test_check("ewenthemes")
