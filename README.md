@@ -14,16 +14,13 @@ the shoulders of [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes).
 
 The core theme, `theme_ewen`, uses Arial Narrow which should be
 installed on practically any modern system. Variations on this theme use
-widely available typefaces - [Work
-Sans](https://github.com/weiweihuanghuang/Work-Sans) by Wei Huang, and
-[Spectral](https://fonts.google.com/specimen/Spectral) by Production
-Type.
+widely available typefaces e.g. [Work
+Sans](https://github.com/weiweihuanghuang/Work-Sans) by Wei Huang.
 
 Core themes:
 
   - `theme_ewen`: Arial Narrow-based theme
   - `theme_ewen_ws`: Work Sans-based theme
-  - `theme_ewen_sp`: Spectral-based theme
 
 These global variables are also made available:
 
@@ -33,9 +30,6 @@ These global variables are also made available:
   - `font_ws_extra_light`: a short global alias for “`Work Sans
     ExtraLight`”
   - `font_ws_bold`: a short global alias for “`Work Sans Bold`”
-  - `font_sp`: a short global alias for “`Spectral`”
-  - `font_sp_light`: a short global alias for “`Spectral Light`”
-  - `font_sp_bold`: a short global alias for “`Spectral Bold`”
 
 ### Installation
 

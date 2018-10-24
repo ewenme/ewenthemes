@@ -20,7 +20,7 @@ theme_ewen_ws(base_family = "Work Sans", base_size = 11.5,
   axis_title_family = subtitle_family, axis_title_size = base_size,
   axis_title_face = "plain", axis_title_just = "rt",
   plot_margin = margin(10, 10, 10, 10), grid_col = "#cccccc",
-  grid = "Y", axis_col = "#2b2b2b", axis = "x")
+  grid = "Y", axis_col = "#222324", axis = "x")
 }
 \arguments{
 \item{base_family, base_size}{base font family and size}

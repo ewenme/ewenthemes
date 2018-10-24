@@ -87,22 +87,22 @@ theme_ewen <- function(base_family="Arial Narrow", base_size = 11.5,
   }
 
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.5))
+    ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.7))
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
       if (regexpr("x", axis)[1] < 0) {
         ret <- ret + theme(axis.line.x=element_blank())
       } else {
-        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
+        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.7))
       }
       if (regexpr("y", axis)[1] < 0) {
         ret <- ret + theme(axis.line.y=element_blank())
       } else {
-        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
+        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.7))
       }
     } else {
-      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
-      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
+      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.7))
+      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.7))
     }
   } else {
     ret <- ret + theme(axis.line=element_blank())

@@ -55,7 +55,7 @@ theme_ewen_ws <- function(base_family="Work Sans", base_size = 11.5,
                        axis_title_face = "plain", axis_title_just = "rt",
                        plot_margin = margin(10, 10, 10, 10),
                        grid_col = "#cccccc", grid = "Y",
-                       axis_col = "#2b2b2b", axis = "x"
+                       axis_col = "#222324", axis = "x"
 ) {
 
   ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
@@ -81,22 +81,22 @@ theme_ewen_ws <- function(base_family="Work Sans", base_size = 11.5,
   }
 
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.5))
+    ret <- ret + theme(axis.line=element_line(color=axis_col, size=0.7))
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
       if (regexpr("x", axis)[1] < 0) {
         ret <- ret + theme(axis.line.x=element_blank())
       } else {
-        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
+        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.7))
       }
       if (regexpr("y", axis)[1] < 0) {
         ret <- ret + theme(axis.line.y=element_blank())
       } else {
-        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
+        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.7))
       }
     } else {
-      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.5))
-      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.5))
+      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.7))
+      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.7))
     }
   } else {
     ret <- ret + theme(axis.line=element_blank())
@@ -109,25 +109,32 @@ theme_ewen_ws <- function(base_family="Work Sans", base_size = 11.5,
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
 
-  ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=0)))
-  ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=0)))
-  ret <- ret + theme(axis.title=element_text(size=axis_title_size, family=axis_title_family))
+  ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=0),
+                                              colour = "#69707a"))
+  ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=0),
+                                              colour = "#69707a"))
+  ret <- ret + theme(axis.title=element_text(size=axis_title_size, family=axis_title_family,
+                                             axis_title_face, colour = "#42464c"))
   ret <- ret + theme(axis.title.x=element_text(hjust=xj, size=axis_title_size,
-                                               family=axis_title_family, face=axis_title_face))
+                                               family=axis_title_family, face=axis_title_face,
+                                               colour = "#42464c"))
   ret <- ret + theme(axis.title.y=element_text(hjust=yj, size=axis_title_size,
-                                               family=axis_title_family, face=axis_title_face))
+                                               family=axis_title_family, face=axis_title_face,
+                                               colour = "#42464c"))
   ret <- ret + theme(axis.title.y.right=element_text(hjust=yj, size=axis_title_size, angle=90,
-                                                     family=axis_title_family, face=axis_title_face))
+                                                     family=axis_title_family, face=axis_title_face,
+                                                     colour = "#42464c"))
   ret <- ret + theme(strip.text=element_text(hjust=0, size=strip_text_size,
-                                             face=strip_text_face, family=strip_text_family))
+                                             face=strip_text_face, family=strip_text_family,
+                                             colour = "#42464c"))
   ret <- ret + theme(panel.spacing=grid::unit(2, "lines"))
-  ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size,
+  ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size, colour = "#222324",
                                              margin=margin(b=plot_title_margin),
                                              family=plot_title_family, face=plot_title_face))
-  ret <- ret + theme(plot.subtitle=element_text(hjust=0, size=subtitle_size,
+  ret <- ret + theme(plot.subtitle=element_text(hjust=0, size=subtitle_size, colour = "#42464c",
                                                 margin=margin(b=subtitle_margin),
                                                 family=subtitle_family, face=subtitle_face))
-  ret <- ret + theme(plot.caption=element_text(hjust=1, size=caption_size,
+  ret <- ret + theme(plot.caption=element_text(hjust=1, size=caption_size, colour = "#69707a",
                                                margin=margin(t=caption_margin),
                                                family=caption_family, face=caption_face))
   ret <- ret + theme(plot.margin=plot_margin)
