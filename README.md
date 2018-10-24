@@ -1,13 +1,8 @@
 
 ## ewenthemes: Beautiful Themes and Theme Components for ‘ggplot2’
 
-[![Project Status: Active - The project has reached a stable, usable
-state and is being actively
-developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Travis-CI Build
 Status](https://travis-ci.org/ewenme/ewenthemes.svg?branch=master)](https://travis-ci.org/ewenme/ewenthemes)
-
------
 
 Typography-centric themes and theme components for ggplot2. Standing on
 the shoulders of [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes).

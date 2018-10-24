@@ -1,8 +1,6 @@
 context("core theme components work")
 test_that("we can do something", {
 
-  library(purrr)
-
   th <- theme_ewen(grid="XY", axis="xy")
   expect_that(th$plot.title$family, equals("Arial Narrow"))
 
@@ -25,10 +23,6 @@ test_that("we can do something", {
   invisible(theme_ewen_ws(axis="xy"))
   invisible(theme_ewen(axis=""))
   invisible(theme_ewen_ws(axis=""))
-
-#   expect_that(ipsum_pal()(1), equals("#d18975"))
-#   expect_that(col$palette(1), equals("#d18975"))
-#   expect_that(fil$palette(1), equals("#d18975"))
 
   testthat::skip_on_cran()
   invisible(import_work_sans())
