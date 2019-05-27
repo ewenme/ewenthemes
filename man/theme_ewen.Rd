@@ -10,12 +10,13 @@ theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
   plot_title_face = "bold", plot_title_margin = 10,
   subtitle_family = base_family, subtitle_size = 12,
   subtitle_face = "plain", subtitle_margin = 15,
+  axis_text_family = subtitle_family, axis_text_size = base_size,
+  axis_title_family = subtitle_family, axis_title_size = base_size,
+  axis_title_face = "plain", axis_title_just = "rt",
+  caption_family = base_family, caption_size = 10,
+  caption_face = "plain", caption_margin = 10,
   strip_text_family = base_family, strip_text_size = 12,
-  strip_text_face = "plain", caption_family = base_family,
-  caption_size = 10, caption_face = "plain", caption_margin = 15,
-  axis_text_size = base_size, axis_title_family = subtitle_family,
-  axis_title_size = base_size, axis_title_face = "plain",
-  axis_title_just = "rt", plot_margin = margin(10, 10, 10, 10),
+  strip_text_face = "plain", plot_margin = margin(10, 10, 10, 10),
   grid_col = "#cccccc", grid = "Y", axis_col = "#2b2b2b",
   axis = "x")
 }
@@ -28,15 +29,15 @@ theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
 
 \item{subtitle_margin}{plot subtitle margin bottom (single numeric value)}
 
-\item{strip_text_family, strip_text_face, strip_text_size}{facet label font family, face and size}
-
-\item{caption_family, caption_face, caption_size, caption_margin}{plot caption family, face, size and margin}
-
-\item{axis_text_size}{font size of axis text}
+\item{axis_text_family, axis_text_size}{axis text font family and size}
 
 \item{axis_title_family, axis_title_face, axis_title_size}{axis title font family, face and size}
 
 \item{axis_title_just}{axis title font justification, one of `[blmcrt]`}
+
+\item{caption_family, caption_face, caption_size, caption_margin}{plot caption family, face, size and margin}
+
+\item{strip_text_family, strip_text_face, strip_text_size}{facet label font family, face and size}
 
 \item{plot_margin}{plot margin (specify with [ggplot2::margin()])}
 
@@ -62,9 +63,9 @@ to register non-core fonts with the Windows graphics device.
 }
 
 \examples{
+\dontrun{
 library(ggplot2)
 
-# seminal scatterplot
 ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
@@ -72,4 +73,5 @@ ggplot(mtcars, aes(mpg, wt)) +
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") +
   theme_ewen()
+}
 }

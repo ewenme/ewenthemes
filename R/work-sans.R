@@ -13,10 +13,9 @@
 #'
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' library(ggplot2)
 #'
-#' # seminal scatterplot
 #' ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
 #'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
@@ -24,6 +23,7 @@
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
 #'   theme_ewen_ws()
+#' }
 
 theme_ewen_ws <- function(base_family = "Work Sans", base_size = 11.5,
                        plot_title_family = "Work Sans Bold",
@@ -32,15 +32,16 @@ theme_ewen_ws <- function(base_family = "Work Sans", base_size = 11.5,
                        subtitle_family = "Work Sans Light",
                        subtitle_size = 12,
                        subtitle_face = "plain", subtitle_margin = 15,
-                       strip_text_family = base_family, strip_text_size = 12,
-                       strip_text_face = "plain",
-                       caption_family = "Work Sans ExtraLight",
-                       caption_size = 11,
-                       caption_face = "plain", caption_margin = 15,
+                       axis_text_family = subtitle_family,
                        axis_text_size = base_size,
                        axis_title_family = subtitle_family,
                        axis_title_size = base_size,
                        axis_title_face = "plain", axis_title_just = "rt",
+                       caption_family = "Work Sans ExtraLight",
+                       caption_size = 11,
+                       caption_face = "plain", caption_margin = 10,
+                       strip_text_family = base_family, strip_text_size = 12,
+                       strip_text_face = "plain",
                        plot_margin = margin(10, 10, 10, 10),
                        grid_col = "#cccccc", grid = "Y",
                        axis_col = "#222324", axis = "x"
@@ -97,10 +98,10 @@ theme_ewen_ws <- function(base_family = "Work Sans", base_size = 11.5,
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
 
-  ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=0),
-                                              colour = "#69707a"))
+  ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=5),
+                                              colour = "#69707a", family = axis_text_family))
   ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=0),
-                                              colour = "#69707a"))
+                                              colour = "#69707a", family = axis_text_family))
   ret <- ret + theme(axis.title=element_text(size=axis_title_size, family=axis_title_family,
                                              axis_title_face, colour = "#42464c"))
   ret <- ret + theme(axis.title.x=element_text(hjust=xj, size=axis_title_size,

@@ -31,22 +31,7 @@ library(ewenthemes)
 library(ggplot2)
 ```
 
-### Base theme (Arial Narrow)
-
-``` r
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point() +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 scatterplot example",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") + 
-  # apply theme
-  theme_ewen()
-```
-
-<img src="README_figs/README-unnamed-chunk-5-1.png" width="672" />
-
-### Work Sans
+### Base theme + Work Sans
 
 ``` r
 ggplot(mtcars, aes(mpg, wt)) +
@@ -59,4 +44,4 @@ ggplot(mtcars, aes(mpg, wt)) +
   theme_ewen_ws()
 ```
 
-<img src="README_figs/README-unnamed-chunk-6-1.png" width="672" />
+<img src="README_figs/README-unnamed-chunk-5-1.png" width="672" />

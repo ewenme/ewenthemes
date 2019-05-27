@@ -35,20 +35,7 @@ library(ewenthemes)
 library(ggplot2)
 ```
 
-### Base theme (Arial Narrow)
-
-```{r fig.retina=2}
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point() +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 scatterplot example",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") + 
-  # apply theme
-  theme_ewen()
-```
-
-### Work Sans
+### Base theme + Work Sans
 
 ```{r fig.retina=2}
 ggplot(mtcars, aes(mpg, wt)) +
