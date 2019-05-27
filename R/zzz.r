@@ -20,9 +20,8 @@
 
   fnt <- extrafont::fonttable()
   if (!any(grepl("Work[ ]Sans|Spectral", fnt$FamilyName))) {
-    packageStartupMessage("NOTE: Either Work Sans or Spectral fonts are required to use these themes.")
-    packageStartupMessage("      Please use ewenthemes::import_work_sans() to install Work Sans and")
-    packageStartupMessage("      ewenthemes::import_spectral() to install Spectral.")
+    packageStartupMessage("NOTE: Work Sans fonts are required to use some themes.")
+    packageStartupMessage("      Please use ewenthemes::import_work_sans() to install Work Sans.")
   } # nocov end
 
 }

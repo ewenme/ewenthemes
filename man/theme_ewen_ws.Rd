@@ -2,65 +2,89 @@
 % Please edit documentation in R/work-sans.R
 \name{theme_ewen_ws}
 \alias{theme_ewen_ws}
-\title{A precise & pristine \link{ggplot2} theme with an emphasis on typography,
-supporting the \href{https://ewen.io/}{ewen.io} site, based on
-\code{theme_ipsum} from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
+\title{[ggplot2] theme supporting the \href{https://ewen.io/}{ewen.io} site, based on
+`theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
 \usage{
 theme_ewen_ws(base_family = "Work Sans", base_size = 11.5,
-  plot_title_family = if (.Platform$OS.type == "windows") "Work Sans"
-  else "Work Sans Bold", plot_title_size = 18,
+  plot_title_family = "Work Sans Bold", plot_title_size = 18,
   plot_title_face = "bold", plot_title_margin = 10,
-  subtitle_family = if (.Platform$OS.type == "windows") "Work Sans" else
-  "Work Sans Light", subtitle_size = 12, subtitle_face = "plain",
-  subtitle_margin = 15, strip_text_family = base_family,
-  strip_text_size = 12, strip_text_face = "plain",
-  caption_family = if (.Platform$OS.type == "windows") "Work Sans" else
-  "Work Sans ExtraLight", caption_size = 11, caption_face = "plain",
-  caption_margin = 15, axis_text_size = base_size,
-  axis_title_family = subtitle_family, axis_title_size = base_size,
-  axis_title_face = "plain", axis_title_just = "rt",
-  plot_margin = margin(10, 10, 10, 10), grid_col = "#cccccc",
-  grid = "Y", axis_col = "#222324", axis = "x")
+  subtitle_family = "Work Sans Light", subtitle_size = 12,
+  subtitle_face = "plain", subtitle_margin = 15,
+  strip_text_family = base_family, strip_text_size = 12,
+  strip_text_face = "plain", caption_family = "Work Sans ExtraLight",
+  caption_size = 11, caption_face = "plain", caption_margin = 15,
+  axis_text_size = base_size, axis_title_family = subtitle_family,
+  axis_title_size = base_size, axis_title_face = "plain",
+  axis_title_just = "rt", plot_margin = margin(10, 10, 10, 10),
+  grid_col = "#cccccc", grid = "Y", axis_col = "#222324",
+  axis = "x")
 }
 \arguments{
-\item{base_family, base_size}{base font family and size}
+\item{base_family}{base font family and size}
 
-\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margi}
+\item{base_size}{base font family and size}
 
-\item{subtitle_family, subtitle_face, subtitle_size}{plot subtitle family, face and size}
+\item{plot_title_family}{plot title family, face, size and margi}
+
+\item{plot_title_size}{plot title family, face, size and margi}
+
+\item{plot_title_face}{plot title family, face, size and margi}
+
+\item{plot_title_margin}{plot title family, face, size and margi}
+
+\item{subtitle_family}{plot subtitle family, face and size}
+
+\item{subtitle_size}{plot subtitle family, face and size}
+
+\item{subtitle_face}{plot subtitle family, face and size}
 
 \item{subtitle_margin}{plot subtitle margin bottom (single numeric value)}
 
-\item{strip_text_family, strip_text_face, strip_text_size}{facet label font family, face and size}
+\item{strip_text_family}{facet label font family, face and size}
 
-\item{caption_family, caption_face, caption_size, caption_margin}{plot caption family, face, size and margin}
+\item{strip_text_size}{facet label font family, face and size}
+
+\item{strip_text_face}{facet label font family, face and size}
+
+\item{caption_family}{plot caption family, face, size and margin}
+
+\item{caption_size}{plot caption family, face, size and margin}
+
+\item{caption_face}{plot caption family, face, size and margin}
+
+\item{caption_margin}{plot caption family, face, size and margin}
 
 \item{axis_text_size}{font size of axis text}
 
-\item{axis_title_family, axis_title_face, axis_title_size}{axis title font family, face and size}
+\item{axis_title_family}{axis title font family, face and size}
 
-\item{axis_title_just}{axis title font justification, one of \code{[blmcrt]}}
+\item{axis_title_size}{axis title font family, face and size}
 
-\item{plot_margin}{plot margin (specify with \code{\link[ggplot2:margin]{ggplot2::margin()}})}
+\item{axis_title_face}{axis title font family, face and size}
 
-\item{grid_col, axis_col}{grid & axis colors; grid defaults to \code{#cccccc}, axes default to \code{#2b2b2b}}
+\item{axis_title_just}{axis title font justification, one of `[blmcrt]`}
 
-\item{grid}{panel grid (\code{TRUE}, \code{FALSE}, or a combination of \code{X}, \code{x}, \code{Y}, \code{y})}
+\item{plot_margin}{plot margin (specify with [ggplot2::margin()])}
 
-\item{axis}{add x or y axes? \code{TRUE}, \code{FALSE}, "\code{xy}"}
+\item{grid_col}{grid & axis colors; grid defaults to `#cccccc`, axes default to `#2b2b2b`}
+
+\item{grid}{panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)}
+
+\item{axis_col}{grid & axis colors; grid defaults to `#cccccc`, axes default to `#2b2b2b`}
+
+\item{axis}{add x or y axes? `TRUE`, `FALSE`, "`xy`"}
 }
 \description{
-You should \url{import_work_sans} first and also install the fonts on your
+You should [import_work_sans]() first and also install the fonts on your
 system before trying to use this theme.
 }
 \details{
-There is an option \code{ewenthemes.loadfonts} which -- if set to \code{TRUE} -- will
-call \code{extrafont::loadfonts()} to register non-core fonts with R PDF & PostScript
+There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
+call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
 devices. If you are running under Windows, the package calls the same function
 to register non-core fonts with the Windows graphics device.
 }
 \examples{
-\dontrun{
 library(ggplot2)
 
 # seminal scatterplot
@@ -71,5 +95,4 @@ ggplot(mtcars, aes(mpg, wt)) +
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") +
   theme_ewen_ws()
-}
 }

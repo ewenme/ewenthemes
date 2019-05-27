@@ -4,8 +4,8 @@
 [![Travis-CI Build
 Status](https://travis-ci.org/ewenme/ewenthemes.svg?branch=master)](https://travis-ci.org/ewenme/ewenthemes)
 
-Minimal, typography-centric themes and aesthetic helpers for charts used
-on [ewen.io](https://ewen.io). Standing on the shoulders of
+Minimal, typography-centric themes and aesthetic helpers, principally
+for charts on [ewen.io](https://ewen.io). Standing on the shoulders of
 [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes).
 
 The core theme, `theme_ewen()`, uses Arial Narrow which should be

@@ -1,5 +1,4 @@
-#' A precise & pristine [ggplot2] theme with an emphasis on typography,
-#' supporting the \href{https://ewen.io/}{ewen.io} site, based on
+#' [ggplot2] theme supporting the \href{https://ewen.io/}{ewen.io} site, based on
 #' `theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
 #'
 #' You should [import_work_sans]() first and also install the fonts on your
@@ -10,22 +9,11 @@
 #' devices. If you are running under Windows, the package calls the same function
 #' to register non-core fonts with the Windows graphics device.
 #'
-#' @md
-#' @param base_family,base_size base font family and size
-#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot title family, face, size and margi
-#' @param subtitle_family,subtitle_face,subtitle_size plot subtitle family, face and size
-#' @param subtitle_margin plot subtitle margin bottom (single numeric value)
-#' @param strip_text_family,strip_text_face,strip_text_size facet label font family, face and size
-#' @param caption_family,caption_face,caption_size,caption_margin plot caption family, face, size and margin
-#' @param axis_title_family,axis_title_face,axis_title_size axis title font family, face and size
-#' @param axis_title_just axis title font justification, one of `[blmcrt]`
-#' @param plot_margin plot margin (specify with [ggplot2::margin()])
-#' @param grid_col,axis_col grid & axis colors; grid defaults to `#cccccc`, axes default to `#2b2b2b`
-#' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
-#' @param axis_text_size font size of axis text
-#' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
+#' @inheritParams theme_ewen
+#'
 #' @export
-#' @examples \dontrun{
+#'
+#' @examples
 #' library(ggplot2)
 #'
 #' # seminal scatterplot
@@ -36,17 +24,17 @@
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
 #'   theme_ewen_ws()
-#' }
-theme_ewen_ws <- function(base_family="Work Sans", base_size = 11.5,
-                       plot_title_family=if (.Platform$OS.type == "windows") "Work Sans" else "Work Sans Bold",
+
+theme_ewen_ws <- function(base_family = "Work Sans", base_size = 11.5,
+                       plot_title_family = "Work Sans Bold",
                        plot_title_size = 18,
-                       plot_title_face="bold", plot_title_margin = 10,
-                       subtitle_family=if (.Platform$OS.type == "windows") "Work Sans" else "Work Sans Light",
+                       plot_title_face = "bold", plot_title_margin = 10,
+                       subtitle_family = "Work Sans Light",
                        subtitle_size = 12,
                        subtitle_face = "plain", subtitle_margin = 15,
                        strip_text_family = base_family, strip_text_size = 12,
                        strip_text_face = "plain",
-                       caption_family = if (.Platform$OS.type == "windows") "Work Sans" else "Work Sans ExtraLight",
+                       caption_family = "Work Sans ExtraLight",
                        caption_size = 11,
                        caption_face = "plain", caption_margin = 15,
                        axis_text_size = base_size,
@@ -58,7 +46,7 @@ theme_ewen_ws <- function(base_family="Work Sans", base_size = 11.5,
                        axis_col = "#222324", axis = "x"
 ) {
 
-  ret <- ggplot2::theme_minimal(base_family=base_family, base_size=base_size)
+  ret <- theme_minimal(base_family=base_family, base_size=base_size)
 
   ret <- ret + theme(legend.background=element_blank())
   ret <- ret + theme(legend.key=element_blank())

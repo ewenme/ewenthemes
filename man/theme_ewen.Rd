@@ -2,9 +2,8 @@
 % Please edit documentation in R/theme-ewen.r
 \name{theme_ewen}
 \alias{theme_ewen}
-\title{A precise & pristine \link{ggplot2} theme with an emphasis on typography,
-supporting the \href{https://ewen.io/}{ewen.io} site, based on
-\code{theme_ipsum} from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
+\title{[ggplot2] theme supporting the \href{https://ewen.io/}{ewen.io} site, based on
+`theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
 \usage{
 theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
   plot_title_family = base_family, plot_title_size = 18,
@@ -37,44 +36,32 @@ theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
 
 \item{axis_title_family, axis_title_face, axis_title_size}{axis title font family, face and size}
 
-\item{axis_title_just}{axis title font justification, one of \code{[blmcrt]}}
+\item{axis_title_just}{axis title font justification, one of `[blmcrt]`}
 
-\item{plot_margin}{plot margin (specify with \code{\link[ggplot2:margin]{ggplot2::margin()}})}
+\item{plot_margin}{plot margin (specify with [ggplot2::margin()])}
 
-\item{grid_col, axis_col}{grid & axis colors; grid defaults to \code{#cccccc}, axes default to \code{#2b2b2b}}
+\item{grid_col, axis_col}{grid & axis colors; grid defaults to `#cccccc`, axes default to `#2b2b2b`}
 
-\item{grid}{panel grid (\code{TRUE}, \code{FALSE}, or a combination of \code{X}, \code{x}, \code{Y}, \code{y})}
+\item{grid}{panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)}
 
-\item{axis}{add x or y axes? \code{TRUE}, \code{FALSE}, "\code{xy}"}
+\item{axis}{add x or y axes? `TRUE`, `FALSE`, "`xy`"}
 }
 \description{
-A precise & pristine \link{ggplot2} theme with an emphasis on typography,
-supporting the \href{https://ewen.io/}{ewen.io} site, based on
-\code{theme_ipsum} from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
+[ggplot2] theme supporting the \href{https://ewen.io/}{ewen.io} site, based on
+`theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
 }
-\section{Building upon \code{theme_ewen}}{
+\section{Building upon `theme_ewen`}{
 
 The function is setup in such a way that you can customize your own one by just
 wrapping the call and changing the parameters. See source for examples.
-}
 
-\section{Gotchas}{
-
-There are distinctions between font names and various devices. Names that work
-for display graphics devices and bitmap ones such as \code{png} may not work well
-for PostScript or PDF ones. You may need two versions of a font-based
-theme function for them to work in a particular situation. This situation
-usually only arises when using a newer font with many weights but somewhat
-irregular internal font name patterns.
-
-There is an option \code{ewenthemes.loadfonts} which -- if set to \code{TRUE} -- will
-call \code{extrafont::loadfonts()} to register non-core fonts with R PDF & PostScript
+There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
+call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
 devices. If you are running under Windows, the package calls the same function
 to register non-core fonts with the Windows graphics device.
 }
 
 \examples{
-\dontrun{
 library(ggplot2)
 
 # seminal scatterplot
@@ -85,5 +72,4 @@ ggplot(mtcars, aes(mpg, wt)) +
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'") +
   theme_ewen()
-}
 }
