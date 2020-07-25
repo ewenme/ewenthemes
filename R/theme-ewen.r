@@ -50,7 +50,7 @@ theme_ewen <- function(
   axis_title_face = base_face, axis_title_margin = base_margin,
   axis_title_just = "rt",
   caption_family = base_family, caption_size = base_size,
-  caption_face = base_face, caption_margin = base_margin,
+  caption_face = base_face, caption_margin = base_margin*1.5,
   strip_text_family = base_family, strip_text_size = base_size,
   strip_text_face = base_face,
   plot_margin = c(10, 10, 10, 10),
