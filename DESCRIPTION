@@ -1,0 +1,30 @@
+Package: ewenthemes
+Type: Package
+Title: Beautiful Themes and Theme Components for 'ggplot2'
+Version: 1.1.0.9000
+Authors@R: c(
+      person("Ewen", "Henderson", email = "ewenhenderson@gmail.com", role = c("aut", "cre"))
+    )
+Maintainer: Ewen Henderson <ewenhenderson@gmail.com>
+Description: A compilation of extra 'ggplot2' themes with an overall emphasis on typography. 
+URL: http://github.com/ewenme/ewenthemes
+BugReports: https://github.com/ewenme/ewenthemes/issues
+Copyright: file inst/COPYRIGHTS
+License: MIT + file LICENSE
+Encoding: UTF-8
+Suggests:
+    testthat,
+    gridExtra,
+    hunspell,
+    knitr,
+    rmarkdown,
+    svglite
+Depends:
+    R (>= 3.2.0)
+Imports:
+    ggplot2 (>= 2.2.1),
+    grDevices,
+    grid,
+    extrafont
+RoxygenNote: 7.1.0
+VignetteBuilder: knitr
