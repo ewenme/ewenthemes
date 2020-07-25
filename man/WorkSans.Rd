@@ -3,37 +3,35 @@
 \docType{data}
 \name{font_ws}
 \alias{font_ws}
-\alias{font_ws_bold}
 \alias{font_ws_light}
 \alias{font_ws_extra_light}
 \title{Work Sans font name R variable aliases}
-\format{length 1 character vector}
+\format{
+length 1 character vector
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+}
 \usage{
 font_ws
-
-font_ws_bold
 
 font_ws_light
 
 font_ws_extra_light
 }
 \description{
-\code{font_ws} == "\code{Work Sans}"
+\code{font_ws} == "\verb{Work Sans}"
 
-\code{font_tw_bold} == "\code{Work Sans Bold}"
+\code{font_ws_light} == "\verb{Work Sans Light}"
 
-\code{font_ws_light} == "\code{Work Sans Light}"
-
-\code{font_ws_extra_light} == "\code{Work Sans ExtraLight}"
+\code{font_ws_extra_light} == "\verb{Work Sans ExtraLight}"
 }
 \note{
-\code{font_ws_bold} (a.k.a. "\code{Work Sans Bold}") is not available on
+\code{font_ws_light} (a.k.a. "\verb{Work Sans Light}") is not available on
 Windows and will throw a warning if used in plots.
 
-\code{font_ws_light} (a.k.a. "\code{Work Sans Light}") is not available on
-Windows and will throw a warning if used in plots.
-
-\code{font_ws_extra_light} (a.k.a. "\code{Work Sans ExtraLight}") is not available on
+\code{font_ws_extra_light} (a.k.a. "\verb{Work Sans ExtraLight}") is not available on
 Windows and will throw a warning if used in plots.
 }
 \keyword{datasets}

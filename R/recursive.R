@@ -1,7 +1,7 @@
 #' [ggplot2] theme supporting the \href{https://ewen.io/}{ewen.io} site, based on
 #' `theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.
 #'
-#' You should [import_work_sans]() first and also install the fonts on your
+#' You should [import_recursive]() first and also install the fonts on your
 #' system before trying to use this theme.
 #'
 #' There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
@@ -22,21 +22,21 @@
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'") +
-#'   theme_ewen_ws()
+#'   theme_ewen_rs()
 #' }
 
-theme_ewen_ws <- function(
-  base_family = "Work Sans Light", base_colour = "#111111", base_size = 14,
+theme_ewen_rs <- function(
+  base_family = "Recursive Regular", base_colour = "#111111", base_size = 14,
   base_margin = 10, base_face = "plain",
-  plot_title_family = "Work Sans", plot_title_size = 24,
-  plot_title_face = "bold", plot_title_margin = 10,
+  plot_title_family = "Recursive Black", plot_title_size = 24,
+  plot_title_face = "plain", plot_title_margin = 10,
   subtitle_family = base_family, subtitle_size = base_size,
   subtitle_face = base_face, subtitle_margin = base_margin,
   axis_text_family = base_family, axis_text_size = base_size,
   axis_title_family = base_family, axis_title_size = base_size,
   axis_title_face = base_face, axis_title_margin = base_margin,
   axis_title_just = "rt",
-  caption_family = "Work Sans ExtraLight", caption_size = base_size,
+  caption_family = "Recursive Light", caption_size = base_size,
   caption_face = base_face, caption_margin = base_margin,
   strip_text_family = base_family, strip_text_size = base_size,
   strip_text_face = base_face,
@@ -68,7 +68,7 @@ theme_ewen_ws <- function(
 }
 
 
-#' Import Work Sans font for use in charts
+#' Import Recursive font for use in charts
 #'
 #' There is an option `ewenthemes.loadfonts` which -- if set to `TRUE` -- will
 #' call `extrafont::loadfonts()` to register non-core fonts with R PDF & PostScript
@@ -81,41 +81,42 @@ theme_ewen_ws <- function(
 #'   recommended that you install them on your system the same way you would any
 #'   other font you wish to use in other programs.
 #' @export
-import_work_sans <- function() {
+import_recursive <- function() {
 
-  ws_font_dir <- system.file("fonts", "work-sans", package="ewenthemes")
+  rec_font_dir <- system.file("fonts", "recursive", package="ewenthemes")
 
-  suppressWarnings(suppressMessages(extrafont::font_import(ws_font_dir, prompt=FALSE)))
+  suppressWarnings(suppressMessages(extrafont::font_import(rec_font_dir, prompt=FALSE)))
 
   message(
     sprintf(
       "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
-      ws_font_dir)
+      rec_font_dir
+      )
   )
 
 }
 
-#' @rdname WorkSans
+#' @rdname Recursive
 #' @md
-#' @title Work Sans font name R variable aliases
-#' @description `font_ws` == "`Work Sans`"
+#' @title Recursive font name R variable aliases
+#' @description `font_rs` == "`Recursive`"
 #' @format length 1 character vector
 #' @export
-font_ws <- "Work Sans"
+font_rs <- "Recursive"
 
-#' @rdname WorkSans
+#' @rdname Recursive
 #' @md
-#' @note `font_ws_light` (a.k.a. "`Work Sans Light`") is not available on
+#' @note `font_rs_light` (a.k.a. "`Recursive Light`") is not available on
 #'     Windows and will throw a warning if used in plots.
-#' @description `font_ws_light` == "`Work Sans Light`"
+#' @description `font_ws_light` == "`Recursive Light`"
 #' @export
-font_ws_light <- "Work Sans Light"
+font_rs_light <- "Recursive Light"
 
-#' @rdname WorkSans
+#' @rdname Recursive
 #' @md
-#' @note `font_ws_extra_light` (a.k.a. "`Work Sans ExtraLight`") is not available on
+#' @note `font_rs_extra_light` (a.k.a. "`Recursive ExtraLight`") is not available on
 #'     Windows and will throw a warning if used in plots.
-#' @description `font_ws_extra_light` == "`Work Sans ExtraLight`"
+#' @description `font_ws_extra_light` == "`Recursive ExtraLight`"
 #' @export
-font_ws_extra_light <- "Work Sans ExtraLight"
+font_rs_extra_light <- "Recursive ExtraLight"
 

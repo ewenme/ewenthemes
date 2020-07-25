@@ -5,7 +5,7 @@ test_that("we can do something", {
   expect_that(th$plot.title$family, equals("Arial Narrow"))
 
   thrc <- theme_ewen_ws(grid="XY", axis="xy")
-  expect_that(thrc$plot.title$family, equals("Work Sans Bold"))
+  expect_that(thrc$plot.title$family, equals("Work Sans"))
 
   invisible(theme_ewen(grid=FALSE))
   invisible(theme_ewen_ws(grid=FALSE))

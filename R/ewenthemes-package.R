@@ -11,8 +11,5 @@
 #' @md
 #' @name ewenthemes
 #' @docType package
-#' @author Ewen Henderson (ewenhenderson@@gmail.com)
 #' @import ggplot2 grid extrafont grDevices
-#' @import rmarkdown knitr
-#' @importFrom tools file_path_sans_ext
 NULL

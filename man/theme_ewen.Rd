@@ -5,23 +5,43 @@
 \title{[ggplot2] theme supporting the \href{https://ewen.io/}{ewen.io} site, based on
 `theme_ipsum` from \href{https://github.com/hrbrmstr/hrbrthemes}{hrbrthemes}.}
 \usage{
-theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
-  plot_title_family = base_family, plot_title_size = 18,
-  plot_title_face = "bold", plot_title_margin = 10,
-  subtitle_family = base_family, subtitle_size = 12,
-  subtitle_face = "plain", subtitle_margin = 15,
-  axis_text_family = subtitle_family, axis_text_size = base_size,
-  axis_title_family = subtitle_family, axis_title_size = base_size,
-  axis_title_face = "plain", axis_title_just = "rt",
-  caption_family = base_family, caption_size = 10,
-  caption_face = "plain", caption_margin = 10,
-  strip_text_family = base_family, strip_text_size = 12,
-  strip_text_face = "plain", plot_margin = margin(10, 10, 10, 10),
-  grid_col = "#cccccc", grid = "Y", axis_col = "#2b2b2b",
-  axis = "x")
+theme_ewen(
+  base_family = "Arial Narrow",
+  base_colour = "#111111",
+  base_size = 14,
+  base_margin = 10,
+  base_face = "plain",
+  plot_title_family = "Arial Narrow",
+  plot_title_size = 24,
+  plot_title_face = "bold",
+  plot_title_margin = 10,
+  subtitle_family = base_family,
+  subtitle_size = base_size,
+  subtitle_face = base_face,
+  subtitle_margin = base_margin,
+  axis_text_family = base_family,
+  axis_text_size = base_size,
+  axis_title_family = base_family,
+  axis_title_size = base_size,
+  axis_title_face = base_face,
+  axis_title_margin = base_margin,
+  axis_title_just = "rt",
+  caption_family = base_family,
+  caption_size = base_size,
+  caption_face = base_face,
+  caption_margin = base_margin,
+  strip_text_family = base_family,
+  strip_text_size = base_size,
+  strip_text_face = base_face,
+  plot_margin = c(10, 10, 10, 10),
+  grid_col = "#cccccc",
+  grid = "Y",
+  axis_col = "#9B9B9B",
+  axis = "x"
+)
 }
 \arguments{
-\item{base_family, base_size}{base font family and size}
+\item{base_family, base_colour, base_size, base_margin, base_face}{base font family, colour, size, margin and face}
 
 \item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margi}
 
@@ -31,7 +51,7 @@ theme_ewen(base_family = "Arial Narrow", base_size = 11.5,
 
 \item{axis_text_family, axis_text_size}{axis text font family and size}
 
-\item{axis_title_family, axis_title_face, axis_title_size}{axis title font family, face and size}
+\item{axis_title_family, axis_title_face, axis_title_size, axis_title_margin}{axis title font family, face, size and margin}
 
 \item{axis_title_just}{axis title font justification, one of `[blmcrt]`}
 
